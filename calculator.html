@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1>Sir Aaron's CALCULATOR</h1>
+    <br />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      h1 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        text-align: center;
+        color: rgb(10, 10, 10);
+      }
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .calculator {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #070707;
+        border-radius: 5px;
+        background-color: #0a0a0a;
+      }
+      .display {
+        font-size: 1.5em;
+        text-align: right;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #141414;
+        border-radius: 5px;
+        background-color: #faf8f8;
+        color: #050505;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+        margin: 5px;
+        border: 1px solid #f8f7f7;
+        border-radius: 5px;
+        background-color: #f3f3f3;
+        cursor: pointer;
+        color: #0f0f0f;
+      }
+      .button:hover {
+        background-color: #16df16;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display" id="display">0</div>
+      <button class="button" onclick="appendNumber(7)">7</button>
+      <button class="button" onclick="appendNumber(8)">8</button>
+      <button class="button" onclick="appendNumber(9)">9</button>
+      <button class="button" onclick="appendOperator('+')">+</button>
+      <button class="button" onclick="appendNumber(4)">4</button>
+      <button class="button" onclick="appendNumber(5)">5</button>
+      <button class="button" onclick="appendNumber(6)">6</button>
+      <button class="button" onclick="appendOperator('-')">-</button>
+      <button class="button" onclick="appendNumber(1)">1</button>
+      <button class="button" onclick="appendNumber(2)">2</button>
+      <button class="button" onclick="appendNumber(3)">3</button>
+      <button class="button" onclick="appendOperator('*')">*</button>
+      <button class="button" onclick="appendNumber(0)">0</button>
+      <button class="button" onclick="clearDisplay()">C</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button" onclick="appendOperator('/')">/</button>
+    </div>
+    <script>
+      let currentInput = "0";
+      let operator = "";
+      let previousInput = "";
+
+      function updateDisplay() {
+        document.getElementById("display").textContent = currentInput;
+      }
+
+      function appendNumber(number) {
+        if (currentInput === "0") {
+          currentInput = number.toString();
+        } else {
+          currentInput += number.toString();
+        }
+        updateDisplay();
+      }
+
+      function appendOperator(op) {
+        operator = op;
+        previousInput = currentInput;
+        currentInput = "0";
+      }
+
+      function clearDisplay() {
+        currentInput = "0";
+        operator = "";
+        previousInput = "";
+        updateDisplay();
+      }
+
+      function calculate() {
+        if (operator && previousInput !== "") {
+          switch (operator) {
+            case "+":
+              currentInput = (
+                parseFloat(previousInput) + parseFloat(currentInput)
+              ).toString();
+              break;
+            case "-":
+              currentInput = (
+                parseFloat(previousInput) - parseFloat(currentInput)
+              ).toString();
+              break;
+            case "*":
+              currentInput = (
+                parseFloat(previousInput) * parseFloat(currentInput)
+              ).toString();
+              break;
+            case "/":
+              currentInput = (
+                parseFloat(previousInput) / parseFloat(currentInput)
+              ).toString();
+              break;
+          }
+          operator = "";
+          previousInput = "";
+          updateDisplay();
+        }
+      }
+    </script>
+  </body>
+</html>
