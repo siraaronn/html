@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+
+    <h3>Sign up Form</h3>
+    <form action="#">
+
+        <table>
+            <tr>
+                <td>
+                    <label for="firstname">First name</label>
+
+                </td>
+                <td>
+                    <input
+                    id="firstname"
+                    type="text" 
+                    placeholder="Enter your first name"
+                    value="Damilola"
+            
+                    >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Last name</label>
+
+                </td>
+                <td>
+                    <input 
+                    type="text"
+                    placeholder="Enter your last name"
+                    
+                    >
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Email Address</label>
+                </td>
+                <td>
+                    <input 
+                    type="email" 
+                    placeholder="Email address"
+                    required
+                    >
+                </td> 
+            </tr>
+
+            <tr>
+                <td>Phone number</td>
+                <td>
+                    <input
+                    type="text"
+                    placeholder="Enter mobile number"
+                    minlength="11"
+                    maxlength="11"
+                    >
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Date of Birth</label>
+                </td>
+                <td>
+                    <input
+                    type="date"
+                    max="2005-01-01"
+                    min="1991-12-31"
+                    >
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">An even number</label>
+                </td>
+                <td>
+                    <input 
+                    type="number" 
+                    min="2"
+                    max="100"
+                    step="10"
+                    >
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Gender</label>
+                </td>
+
+                <td>
+                    <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    checked
+                    >
+                    <label for="male">Male</label>
+
+
+                    <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    >
+                    <label for="female">Female</label>
+
+                    
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Pick your interests</label>
+                </td>
+
+                <td>
+                    <input
+                    type="checkbox"
+                    id="football"
+                    name="hobbies"
+                    checkeds
+                    >
+                    <label for="football">Football</label>
+
+
+                    <input
+                    type="checkbox"
+                    id="movies"
+                    name="hobbies"
+                    >
+                    <label for="movies">Movies</label>
+
+                    <input
+                    type="checkbox"
+                    id="reading"
+                    name="hobbies"
+                    >
+                    <label for="reading">Reading Books</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Passport</td>
+                <td>
+                    <input
+                    type="file"
+                    accept="image/*"
+                    multiple
+            
+                    >
+                </td>
+            </tr>
+
+            <tr>
+                <td>State of Origin</td>
+                <td>
+                    <select>
+                        <option value="">Abuja</option>
+                        <option value="">Abia</option>
+                        <option value="" selected>Gombe</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input 
+                    type="submit"
+                    value="Register"
+                    >
+
+                    <input 
+                    type="button"
+                    value="<< Go back"
+                    >
+
+                    <input
+                    type="reset"
+                    value="Wipe"
+                    >
+
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Register</button>
+
+                    <button type="button"><< Go back</button>
+
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">    <h3>Other Inputs</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td>URL</td>
+                <td>   
+                    <input type="url" placeholder="Your website">
+                </td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>
+                    <input
+                    type="color"
+                    />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Range</td>
+                <td>
+                    <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    >
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>Progress Bar</td>
+                <td>
+                    <progress max="100" value="80">loading</progress>
+                </td>
+            </tr>
+            <tr>
+                <td>Tel</td>
+                <td>
+                    <input type="tel" >
+                </td>
+            </tr>
+            <tr>
+                <td>Search</td>
+                <td>
+                    <input type="search" >
+                </td>
+            </tr>
+
+            <tr>
+                <td>Hidden Input</td>
+                <td>
+                    <input type="hidden" name="" value="sdjfdsjsjd">
+                </td>
+                
+            </tr>
+
+            <tr>
+                <td>Textarea</td>
+                <td><textarea name="" id="" cols="30" rows="20"></textarea></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <form action="">
+        <fieldset>
+            <legend>BioData</legend>
+
+            <label for="">Firstname</label>
+            <input type="text" name="" id="">
+        </fieldset>
+    </form>
+
+
+
+    
+</body>
+</html>
